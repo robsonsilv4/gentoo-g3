@@ -19,6 +19,57 @@ Kernel
 - [Gentoo](./configurations/kernels)
 - [CK](./configurations/kernels)
 
+## Tutorial
+
+### Intel undervolt
+
+```bash
+# /etc/intel-undervolt.conf
+
+undervolt 0 'CPU' -125.0
+undervolt 1 'GPU' 40.0
+undervolt 2 'CPU Cache' -125.0
+undervolt 3 'System Agent' -40.0
+undervolt 4 'Analog I/O' 0
+```
+
+### SDDM
+
+```bash
+# /etc/sddm.conf
+
+[Theme]
+Current=breeze
+
+CursorTheme=breeze_cursors
+
+[X11]
+DisplayCommand=/etc/sddm/scripts/Xsetup
+---
+
+# /etc/sddm/scripts/Xsetup
+
+setxkbmap br-abnt2
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+```
+
+### Libinput
+
+```bash
+# /etc/X11/xorg.conf.d/40-libinput.conf
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Option "Tapping" "True"
+        Option "TappingDrag" "True"
+        Driver "libinput"
+EndSection
+```
+
 ## Stage 4
 
 ### Minimal Desktop:
@@ -30,10 +81,10 @@ default/linux/amd64/17.1/desktop/plasma
 ```
 
 Kernel
+
 ```
 linux-5.4.28-gentoo
 ```
-
 
 ### Plasma/KDE Desktop:
 
@@ -44,6 +95,7 @@ default/linux/amd64/17.1/desktop/plasma
 ```
 
 Kernel
+
 ```
 linux-5.4.28-gentoo
 ```
