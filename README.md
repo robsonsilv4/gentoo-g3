@@ -17,7 +17,7 @@ Portage
 Kernel
 
 - [Gentoo](./configurations/kernels/config.gentoo)
-- [CK](./configurations/kernels/config.ck) *Updated!*
+- [CK](./configurations/kernels/config.ck) _Updated!_
 
 ## Tutorial
 
@@ -53,6 +53,27 @@ setxkbmap br-abnt2
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
+```
+
+### NetworkManager
+
+```bash
+[main]
+plugins=keyfile
+hostname-mode=none
+```
+
+### Alsa/PulseAudio
+
+```bash
+# /etc/modprobe.d/alsa.conf
+
+options snd cards_limit=2
+
+options snd-hda-intel id=PCH index=0
+options snd-hda-intel id=HDMI index=1
+
+options snd-hda-intel model=headset-mic
 ```
 
 ### Libinput
@@ -106,6 +127,7 @@ Ebuilds:
 app-admin/sudo
 app-admin/sysklogd
 app-misc/neofetch
+app-portage/cpuid2cpuflags
 app-portage/genlop
 app-portage/gentoolkit
 app-shells/bash-completion
@@ -120,6 +142,7 @@ kde-misc/latte-dock
 kde-plasma/plasma-meta
 media-fonts/liberation-fonts
 media-libs/mesa
+media-libs/nv-codec-headers
 media-libs/vulkan-loader
 media-plugins/alsa-plugins
 media-sound/alsa-utils
@@ -129,6 +152,7 @@ net-misc/networkmanager
 sys-apps/bleachbit
 sys-apps/haveged
 sys-apps/iucode_tool
+sys-apps/lm-sensors
 sys-apps/mlocate
 sys-apps/pciutils
 sys-apps/usbutils
@@ -136,6 +160,7 @@ sys-boot/grub:2
 sys-firmware/intel-microcode
 sys-fs/dosfstools
 sys-fs/ntfs3g
+sys-kernel/ck-sources
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
 sys-libs/pam
@@ -147,6 +172,7 @@ www-client/links
 x11-apps/mesa-progs
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
+x11-libs/libXScrnSaver # for Chromium based applications
 x11-misc/xdg-user-dirs
 ```
 
