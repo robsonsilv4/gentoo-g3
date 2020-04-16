@@ -176,4 +176,25 @@ x11-libs/libXScrnSaver # for Chromium based applications
 x11-misc/xdg-user-dirs
 ```
 
+OpenRC services:
+
+```bash
+Runlevel: default
+ NetworkManager
+ netmount
+ xdm
+ sysklogd
+ haveged
+ sshd
+ bluetooth
+ cronie
+ intel-undervolt-loop
+ local
+Dynamic Runlevel: hotplugged
+Dynamic Runlevel: needed/wanted
+ xdm-setup
+ dbus
+Dynamic Runlevel: manual
+```
+
 ## License
