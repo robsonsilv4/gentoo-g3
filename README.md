@@ -16,8 +16,8 @@ Portage
 
 Kernel
 
-- [Gentoo](./configurations/kernels)
-- [CK](./configurations/kernels)
+- [Gentoo](./configurations/kernels/config.gentoo)
+- [CK](./configurations/kernels/config.ck) *Updated!*
 
 ## Tutorial
 
