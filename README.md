@@ -6,6 +6,11 @@ Installation, configuration and stage 4 for Gentoo Linux.
 
 ![Preview](./images/preview.png)
 
+## Downloads
+
+- [Minimal Desktop](https://androidfilehost.com/?fid=4349826312261786875) - Stage4
+- [KDE/Plasma Desktop](https://androidfilehost.com/?fid=4349826312261786878) - Stage4
+
 ## Configurations
 
 Portage
